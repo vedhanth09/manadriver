@@ -1,5 +1,5 @@
 import { useEffect } from "react"
-import { MapPin, Car, Clock, DollarSign, Star, ClipboardCheck } from "lucide-react"
+import { MapPin, Car, Clock, DollarSign, Star } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { RatingStars } from "@/components/ui/rating-stars"
 import { JobCardSkeletonGrid } from "@/components/shared/skeleton-loaders"
@@ -7,6 +7,8 @@ import { EmptyState } from "@/components/ui/empty-state"
 import { ApiError } from "@/components/shared/api-error"
 import { useApplications } from "@/hooks/useApplications"
 import type { PopulatedApplication } from "@/types"
+
+import emptyCompletedImg from "@/assets/empty-completed.png"
 
 function getJobPayout(job: PopulatedApplication["jobId"]): string {
   if (job.jobType === "hourly" && job.expectedPayout)
@@ -57,7 +59,7 @@ function DriverCompletedJobsTab() {
   if (completedApplications.length === 0) {
     return (
       <EmptyState
-        icon={<ClipboardCheck className="size-12" />}
+        icon={<img src={emptyCompletedImg} alt="No completed jobs" className="w-48 h-auto opacity-80" />}
         title="No completed jobs"
         description="Jobs you've completed or cancelled will appear here."
       />

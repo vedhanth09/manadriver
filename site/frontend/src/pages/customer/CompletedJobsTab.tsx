@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { MapPin, DollarSign, Star, ClipboardCheck } from "lucide-react"
+import { MapPin, DollarSign, Star } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Modal, ModalHeader, ModalTitle, ModalFooter } from "@/components/ui/modal"
@@ -13,6 +13,8 @@ import { useToast } from "@/components/ui/toast"
 import { createRating, getMySubmittedRatings } from "@/services/ratings"
 import { useAuth } from "@/hooks/useAuth"
 import type { Job } from "@/types"
+
+import emptyCompletedImg from "@/assets/empty-completed.png"
 
 function getJobPayout(job: Job): string {
   if (job.jobType === "hourly" && job.expectedPayout)
@@ -117,7 +119,7 @@ function CustomerCompletedJobsTab() {
   if (completedJobs.length === 0) {
     return (
       <EmptyState
-        icon={<ClipboardCheck className="size-12" />}
+        icon={<img src={emptyCompletedImg} alt="No completed jobs" className="w-48 h-auto opacity-80" />}
         title="No completed jobs"
         description="Jobs that are completed or cancelled will appear here."
       />

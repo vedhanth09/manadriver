@@ -8,7 +8,6 @@ import {
   Clock,
   Car,
   DollarSign,
-  PhoneCall,
   Lock,
   Headphones,
   UserCheck,
@@ -25,6 +24,10 @@ import { Accordion } from "@/components/ui/accordion"
 import { Navbar } from "@/components/layout/navbar"
 import { Footer } from "@/components/layout/footer"
 import { useScrollFadeIn } from "@/hooks/useScrollFadeIn"
+
+import heroIllustration from "@/assets/hero-illustration.png"
+import indiaMap from "@/assets/india-map.png"
+import phoneMockup from "@/assets/phone-mockup.png"
 
 /* ──────────────────────────────────────────
    Section 1 — Hero
@@ -66,8 +69,8 @@ function HeroSection() {
 
         {/* Illustration placeholder */}
         <div className="flex items-center justify-center">
-          <div className="flex h-64 w-full max-w-md items-center justify-center rounded-card bg-white/60 shadow-card lg:h-80">
-            <Car className="size-24 text-accent/40" strokeWidth={1} />
+          <div className="flex w-full items-center justify-center lg:h-80">
+            <img src={heroIllustration} alt="Hero Illustration" className="max-h-full max-w-full drop-shadow-xl" />
           </div>
         </div>
       </div>
@@ -286,8 +289,8 @@ function ServiceAreasSection() {
         className="fade-in mx-auto grid max-w-7xl items-center gap-12 px-4 lg:grid-cols-2 lg:px-8"
       >
         {/* Map placeholder */}
-        <div className="flex h-64 items-center justify-center rounded-card bg-surface lg:h-80">
-          <MapPin className="size-24 text-accent/30" strokeWidth={1} />
+        <div className="flex justify-center lg:h-80">
+          <img src={indiaMap} alt="Service Areas Map" className="max-h-full" />
         </div>
 
         {/* Area list */}
@@ -448,8 +451,8 @@ function AppDownloadSection() {
         className="fade-in mx-auto grid max-w-7xl items-center gap-12 px-4 lg:grid-cols-2 lg:px-8"
       >
         {/* Phone mockup placeholder */}
-        <div className="flex h-72 items-center justify-center rounded-card bg-surface lg:h-96">
-          <PhoneCall className="size-24 text-accent/30" strokeWidth={1} />
+        <div className="flex justify-center lg:h-96">
+          <img src={phoneMockup} alt="ManaDriver App Mockup" className="max-h-full drop-shadow-2xl" />
         </div>
 
         {/* Copy + store buttons */}

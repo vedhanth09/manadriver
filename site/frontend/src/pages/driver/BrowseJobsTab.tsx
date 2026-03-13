@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Search, X, Briefcase } from "lucide-react"
+import { Search, X } from "lucide-react"
 import { Select } from "@/components/ui/select"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
@@ -13,6 +13,7 @@ import { useToast } from "@/components/ui/toast"
 import type { JobFilters } from "@/services/jobs"
 import type { Job } from "@/types"
 import { JOB_TYPES, CAR_TYPES, TRANSMISSION_TYPES, CITIES } from "@/constants"
+import emptyJobsImg from "@/assets/empty-jobs.png"
 
 const WORKING_HOURS_OPTIONS = [
   { value: "12hr", label: "12 Hour Shift" },
@@ -175,7 +176,7 @@ function BrowseJobsTab() {
 
       {!loading && !error && jobs.length === 0 && (
         <EmptyState
-          icon={<Briefcase className="size-12" />}
+          icon={<img src={emptyJobsImg} alt="No jobs" className="w-48 h-auto opacity-80" />}
           title="No jobs found"
           description="Try adjusting your filters or check back later for new postings."
         />

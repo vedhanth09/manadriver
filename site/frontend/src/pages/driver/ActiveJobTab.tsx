@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { MapPin, Phone, Car, Clock, DollarSign, User, CheckCircle, Play, XCircle, Briefcase } from "lucide-react"
+import { MapPin, Phone, Car, Clock, DollarSign, User, CheckCircle, Play, XCircle } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { JobCardSkeletonGrid } from "@/components/shared/skeleton-loaders"
@@ -11,6 +11,8 @@ import { useToast } from "@/components/ui/toast"
 import { updateJobStatus } from "@/services/jobs"
 import type { PopulatedApplication } from "@/types"
 import { isAxiosError } from "axios"
+
+import emptyActiveJobImg from "@/assets/empty-active-job.png"
 
 function getJobPayout(job: PopulatedApplication["jobId"]): string {
   if (job.jobType === "hourly" && job.expectedPayout)
@@ -95,7 +97,7 @@ function ActiveJobTab() {
   if (activeApplications.length === 0) {
     return (
       <EmptyState
-        icon={<Briefcase className="size-12" />}
+        icon={<img src={emptyActiveJobImg} alt="No active jobs" className="w-48 h-auto opacity-80" />}
         title="No active jobs"
         description="Once you accept a job, it will appear here."
       />

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { MapPin, Users, Play, CheckCircle, XCircle, X, Briefcase } from "lucide-react"
+import { MapPin, Users, Play, CheckCircle, XCircle, X } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Select } from "@/components/ui/select"
@@ -17,6 +17,9 @@ import { updateJobStatus } from "@/services/jobs"
 import type { ApplicantFilters } from "@/services/applications"
 import type { Job } from "@/types"
 import { isAxiosError } from "axios"
+
+import emptyJobsImg from "@/assets/empty-jobs.png"
+import emptyApplicationsImg from "@/assets/empty-applications.png"
 
 const EXPERIENCE_LEVELS = [
   { value: "beginner", label: "Beginner (< 10 jobs)" },
@@ -156,7 +159,7 @@ function MyJobsTab() {
   if (activeJobs.length === 0) {
     return (
       <EmptyState
-        icon={<Briefcase className="size-12" />}
+        icon={<img src={emptyJobsImg} alt="No jobs" className="w-48 h-auto opacity-80" />}
         title="No active jobs"
         description="Post a job to start receiving applications from drivers."
       />
@@ -309,7 +312,7 @@ function MyJobsTab() {
 
           {!applicantsLoading && !applicantsError && applicants.length === 0 && (
             <EmptyState
-              icon={<Users className="size-10" />}
+              icon={<img src={emptyApplicationsImg} alt="No applicants yet" className="w-48 h-auto opacity-80" />}
               title="No applicants yet"
               description="Drivers will appear here once they apply."
             />

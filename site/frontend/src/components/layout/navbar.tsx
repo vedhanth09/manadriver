@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { NotificationBell } from "@/components/shared/notification-bell"
 import { useAuth } from "@/hooks/useAuth"
 import { cn } from "@/lib/utils"
+import logo from "@/assets/logo.png"
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -35,8 +36,8 @@ function Navbar() {
     <header className="fixed inset-x-0 top-0 z-40 border-b border-border bg-white">
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 lg:px-8">
         {/* Logo */}
-        <Link to="/" className="text-xl font-bold text-primary">
-          ManaDriver
+        <Link to="/" className="flex items-center">
+          <img src={logo} alt="ManaDriver Logo" className="h-8 w-auto lg:h-10" />
         </Link>
 
         {/* Desktop Nav Links */}
