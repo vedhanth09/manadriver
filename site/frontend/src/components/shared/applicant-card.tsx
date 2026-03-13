@@ -28,7 +28,7 @@ function ApplicantCard({
   return (
     <div
       className={cn(
-        "flex items-center gap-4 rounded-card bg-white p-4 shadow-card transition-all duration-150 hover:-translate-y-0.5 hover:shadow-card-hover",
+        "flex items-center gap-5 rounded-card bg-white p-5 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover border border-transparent hover:border-border/50",
         className
       )}
       {...props}
@@ -37,18 +37,18 @@ function ApplicantCard({
 
       <div className="min-w-0 flex-1">
         <div className="flex items-center gap-2">
-          <h4 className="truncate font-semibold text-foreground">{name}</h4>
+          <h4 className="truncate font-semibold text-foreground text-base">{name}</h4>
           {isVerified && (
             <Badge status="approved">Verified</Badge>
           )}
         </div>
-        <p className="text-caption text-muted-foreground">Age: {age}</p>
-        <RatingStars rating={rating} size="sm" className="mt-1" />
-        <div className="mt-2 flex flex-wrap gap-1">
+        <p className="text-caption text-muted-foreground mt-0.5">Age: {age}</p>
+        <RatingStars rating={rating} size="sm" className="mt-1.5" />
+        <div className="mt-3 flex flex-wrap gap-2">
           {experienceTags.map((tag) => (
             <span
               key={tag}
-              className="rounded-badge bg-surface px-2 py-0.5 text-xs font-medium text-subheading"
+              className="rounded-badge bg-surface border border-border/50 px-2.5 py-1 text-xs font-medium text-subheading"
             >
               {tag}
             </span>

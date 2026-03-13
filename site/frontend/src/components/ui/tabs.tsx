@@ -22,10 +22,10 @@ function Tabs({ activeTab, onTabChange, tabs, className, ...props }: TabsProps) 
             aria-selected={activeTab === tab.value}
             onClick={() => onTabChange(tab.value)}
             className={cn(
-              "min-h-[44px] shrink-0 whitespace-nowrap border-b-2 px-1 py-3 text-sm font-medium transition-colors",
+              "min-h-[48px] shrink-0 whitespace-nowrap border-b-2 px-2 py-4 text-base font-medium transition-colors",
               activeTab === tab.value
                 ? "border-accent text-accent"
-                : "border-transparent text-muted-foreground hover:border-border hover:text-foreground"
+                : "border-transparent text-muted-foreground hover:border-border/50 hover:text-foreground"
             )}
           >
             {tab.label}

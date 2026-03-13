@@ -57,12 +57,12 @@ function ToastProvider({ children }: { children: React.ReactNode }) {
           <div
             key={t.id}
             className={cn(
-              "flex items-center gap-3 rounded-card border px-4 py-3 shadow-card animate-in slide-in-from-right-full duration-300",
+              "flex items-center gap-4 rounded-card border px-5 py-4 shadow-card hover:shadow-card-hover transition-all duration-300 animate-in slide-in-from-right-full",
               variantClasses[t.variant]
             )}
           >
             {icons[t.variant]}
-            <span className="text-sm font-medium text-foreground">{t.message}</span>
+            <span className="text-base font-medium text-foreground">{t.message}</span>
             <button
               onClick={() => dismiss(t.id)}
               className="ml-2 shrink-0 text-muted-foreground hover:text-foreground"

@@ -7,70 +7,71 @@
 /* ─── Design Tokens (from DESIGN.md) ─── */
 
 :root {
-  /* Brand Colors */
-  --primary: #083344;
-  --primary-foreground: #FFFFFF;
-  --accent: #10B981;
+  /* Brand Colors - Refined */
+  --primary: #0F172A; /* Deep slate, elegant and not harsh */
+  --primary-foreground: #F8FAFC;
+  --accent: #059669; /* Rich emerald */
   --accent-foreground: #FFFFFF;
-  --accent-hover: #059669;
-  --mint-bg: #ECFDF5;
+  --accent-hover: #047857; /* Darker emerald for hover state */
+  --mint-bg: #F0FDF4; /* Very soft emerald tint */
   --surface: #F8FAFC;
 
   /* Backgrounds */
-  --background: #FFFFFF;
-  --foreground: #111827;
-  --card: #F1F5F9;
-  --card-foreground: #111827;
+  --background: #FAFAFA;
+  --foreground: #18181B; /* Soft black */
+  --card: #FFFFFF;
+  --card-foreground: #18181B;
   --popover: #FFFFFF;
-  --popover-foreground: #111827;
+  --popover-foreground: #18181B;
 
   /* Secondary / Muted */
-  --secondary: #F8FAFC;
-  --secondary-foreground: #083344;
-  --muted: #F8FAFC;
-  --muted-foreground: #6B7280;
+  --secondary: #F4F4F5;
+  --secondary-foreground: #27272A;
+  --muted: #F4F4F5;
+  --muted-foreground: #52525B; /* Enough contrast for readability */
 
   /* Borders & Inputs */
-  --border: #E5E7EB;
-  --input: #E5E7EB;
-  --ring: #10B981;
+  --border: #E4E4E7;
+  --input: #E4E4E7;
+  --ring: #059669;
 
   /* Text */
-  --subheading: #374151;
+  --subheading: #3F3F46;
 
   /* Status */
-  --destructive: #EF4444;
+  --destructive: #E11D48; /* High-contrast red/rose */
 
-  /* Base radius (used by shadcn computations) */
-  --radius: 0.5rem;
+  /* Base radius */
+  --radius: 0.75rem;
 
-  /* Sidebar (shadcn compat) */
+  /* Sidebar */
   --sidebar: #F8FAFC;
-  --sidebar-foreground: #111827;
-  --sidebar-primary: #083344;
-  --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #10B981;
-  --sidebar-accent-foreground: #FFFFFF;
-  --sidebar-border: #E5E7EB;
-  --sidebar-ring: #10B981;
+  --sidebar-foreground: #18181B;
+  --sidebar-primary: #0F172A;
+  --sidebar-primary-foreground: #F8FAFC;
+  --sidebar-accent: #F4F4F5;
+  --sidebar-accent-foreground: #18181B;
+  --sidebar-border: #E4E4E7;
+  --sidebar-ring: #059669;
 
   /* Charts */
-  --chart-1: #10B981;
-  --chart-2: #059669;
-  --chart-3: #083344;
-  --chart-4: #6B7280;
-  --chart-5: #374151;
+  --chart-1: #059669;
+  --chart-2: #0F172A;
+  --chart-3: #14B8A6;
+  --chart-4: #F59E0B;
+  --chart-5: #6366F1;
 }
 
 @theme inline {
   /* ─── Typography ─── */
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 
-  --font-size-h1: 3rem;          /* 48px */
-  --font-size-h2: 2rem;          /* 32px */
-  --font-size-h3: 1.375rem;      /* 22px */
-  --font-size-body: 1rem;        /* 16px */
-  --font-size-caption: 0.8125rem;/* 13px */
+  /* Clear typographic hierarchy */
+  --font-size-h1: 2.5rem;   /* 40px */
+  --font-size-h2: 1.75rem;  /* 28px */
+  --font-size-h3: 1.25rem;  /* 20px */
+  --font-size-body: 1rem;   /* 16px */
+  --font-size-caption: 0.875rem; /* 14px */
 
   /* ─── Colors ─── */
   --color-background: var(--background);
@@ -114,12 +115,12 @@
   --color-chart-5: var(--chart-5);
 
   /* ─── Shadows ─── */
-  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.08);
-  --shadow-card-hover: 0 4px 16px rgba(0, 0, 0, 0.12);
-  --shadow-modal: 0 8px 32px rgba(0, 0, 0, 0.16);
+  --shadow-card: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+  --shadow-card-hover: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.08);
+  --shadow-modal: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
 
   /* ─── Border Radius ─── */
-  --radius-card: 12px;
+  --radius-card: 16px;
   --radius-button: 8px;
   --radius-input: 8px;
   --radius-badge: 9999px;

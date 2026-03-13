@@ -41,12 +41,12 @@ function Navbar() {
         </Link>
 
         {/* Desktop Nav Links */}
-        <ul className="hidden items-center gap-6 md:flex">
+        <ul className="hidden items-center gap-8 md:flex">
           {navLinks.map((link) => (
             <li key={link.href}>
               <a
                 href={link.href}
-                className="text-sm font-medium text-muted-foreground hover:text-accent transition-colors"
+                className="text-base font-medium text-muted-foreground hover:text-primary transition-colors"
               >
                 {link.label}
               </a>
@@ -55,7 +55,7 @@ function Navbar() {
         </ul>
 
         {/* Desktop Right Actions */}
-        <div className="hidden items-center gap-3 md:flex">
+        <div className="hidden items-center gap-4 md:flex">
           {isAuthenticated && user ? (
             <>
               <Link to={dashboardLink}>
