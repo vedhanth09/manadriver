@@ -143,9 +143,24 @@
   }
   body {
     @apply bg-background text-foreground;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: -0.01em;
   }
   html {
     @apply font-sans;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+  /* Better readability for dashboard labels */
+  label {
+    letter-spacing: 0.01em;
+  }
+  /* Improved paragraph readability */
+  p {
+    line-height: 1.6;
   }
 }
 

@@ -60,7 +60,11 @@ function HeroSection() {
               </Button>
             </Link>
             <Link to="/signup">
-              <Button variant="ghost" size="lg">
+              <Button
+                variant="ghost"
+                size="lg"
+                className="border-2 border-accent text-accent shadow-[0_0_16px_rgba(6,182,212,0.35)] hover:bg-accent hover:text-white hover:shadow-[0_0_24px_rgba(6,182,212,0.5)] transition-all duration-200"
+              >
                 Become a Driver&nbsp;&rarr;
               </Button>
             </Link>
@@ -139,7 +143,7 @@ const whyChooseUs = [
 function WhyChooseUsSection() {
   const ref = useScrollFadeIn()
   return (
-    <section className="bg-surface py-16 lg:py-24">
+    <section id="about" className="bg-surface py-16 lg:py-24">
       <div ref={ref} className="fade-in mx-auto max-w-7xl px-4 lg:px-8">
         <h2 className="mb-12 text-center text-h2 font-bold text-foreground">
           Why Choose Us

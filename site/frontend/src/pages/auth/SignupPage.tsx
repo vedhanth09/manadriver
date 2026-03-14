@@ -71,7 +71,7 @@ function SignupPage() {
             Create an Account
           </h1>
           <p className="mt-2 text-body text-muted-foreground">
-            Join as a driver or customer
+            {role === "driver" ? "Join as a Driver" : "Join as a Customer"}
           </p>
         </div>
 

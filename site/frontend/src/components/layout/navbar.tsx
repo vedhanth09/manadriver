@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { NotificationBell } from "@/components/shared/notification-bell"
@@ -14,11 +14,23 @@ const navLinks = [
   { label: "About Us", href: "/#about" },
 ]
 
-function Navbar() {
+interface NavbarProps {
+  activeTab?: string
+}
+
+function Navbar({ activeTab: _activeTab }: NavbarProps = {}) {
   const [mobileOpen, setMobileOpen] = useState(false)
   const { user, isAuthenticated, logout } = useAuth()
+  const location = useLocation()
 
   const dashboardLink = user?.role === "driver" ? "/driver" : "/customer"
+
+  // Determine if a nav link is active based on current path + hash
+  const isLinkActive = (href: string) => {
+    const currentPath = location.pathname + location.hash
+    if (href === "/") return currentPath === "/"
+    return currentPath === href
+  }
 
   // Lock body scroll when mobile drawer is open
   useEffect(() => {
@@ -46,7 +58,12 @@ function Navbar() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="text-base font-medium text-muted-foreground hover:text-primary transition-colors"
+                className={cn(
+                  "text-base font-medium transition-colors",
+                  isLinkActive(link.href)
+                    ? "text-accent border-b-2 border-accent pb-0.5"
+                    : "text-muted-foreground hover:text-primary"
+                )}
               >
                 {link.label}
               </a>
@@ -59,7 +76,17 @@ function Navbar() {
           {isAuthenticated && user ? (
             <>
               <Link to={dashboardLink}>
-                <Button variant="ghost" size="sm">Dashboard</Button>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className={cn(
+                    location.pathname.startsWith("/customer") || location.pathname.startsWith("/driver")
+                      ? "text-accent font-semibold"
+                      : ""
+                  )}
+                >
+                  Dashboard
+                </Button>
               </Link>
               <NotificationBell />
               <span className="text-sm font-medium text-foreground">{user.fullName}</span>
@@ -109,7 +136,12 @@ function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="flex min-h-[44px] items-center rounded-lg px-3 text-sm font-medium text-muted-foreground hover:bg-surface hover:text-accent"
+              className={cn(
+                "flex min-h-[44px] items-center rounded-lg px-3 text-sm font-medium",
+                isLinkActive(link.href)
+                  ? "bg-mint-bg text-accent font-semibold"
+                  : "text-muted-foreground hover:bg-surface hover:text-accent"
+              )}
               onClick={() => setMobileOpen(false)}
             >
               {link.label}
@@ -120,7 +152,12 @@ function Navbar() {
             <>
               <Link
                 to={dashboardLink}
-                className="flex min-h-[44px] items-center rounded-lg px-3 text-sm font-medium text-muted-foreground hover:bg-surface"
+                className={cn(
+                  "flex min-h-[44px] items-center rounded-lg px-3 text-sm font-medium",
+                  location.pathname.startsWith("/customer") || location.pathname.startsWith("/driver")
+                    ? "bg-mint-bg text-accent font-semibold"
+                    : "text-muted-foreground hover:bg-surface"
+                )}
                 onClick={() => setMobileOpen(false)}
               >
                 Dashboard

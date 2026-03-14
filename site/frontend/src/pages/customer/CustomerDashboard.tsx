@@ -24,9 +24,16 @@ function CustomerDashboard() {
 
   return (
     <>
-      <Navbar />
+      <Navbar activeTab={activeTab} />
       <PageWrapper className="pt-24">
-        <h1 className="text-h2 font-bold text-foreground">Customer Dashboard</h1>
+        <div className="mb-1">
+          <h1 className="text-[1.75rem] font-bold tracking-tight text-foreground leading-tight">
+            Customer Dashboard
+          </h1>
+          <p className="mt-1 text-[0.9375rem] text-muted-foreground">
+            Welcome back, <span className="font-medium text-foreground">{user?.fullName}</span>. Manage your driver requests below.
+          </p>
+        </div>
         <div className="mt-6">
           <Tabs activeTab={activeTab} onTabChange={setActiveTab} tabs={dashboardTabs} />
         </div>
