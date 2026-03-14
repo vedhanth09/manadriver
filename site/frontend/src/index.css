@@ -7,57 +7,58 @@
 /* ─── Design Tokens (from DESIGN.md) ─── */
 
 :root {
-  /* Brand Colors - Refined */
-  --primary: #0F172A; /* Deep slate, elegant and not harsh */
-  --primary-foreground: #F8FAFC;
-  --accent: #059669; /* Rich emerald */
+  /* Brand Colors - Cyan Palette */
+  --primary: #06B6D4;           /* Primary Cyan Accent — CTAs, icons, headers */
+  --primary-foreground: #FFFFFF;
+  --accent: #06B6D4;            /* Cyan accent (same as primary) */
   --accent-foreground: #FFFFFF;
-  --accent-hover: #047857; /* Darker emerald for hover state */
-  --mint-bg: #F0FDF4; /* Very soft emerald tint */
-  --surface: #F8FAFC;
+  --accent-hover: #0891B2;      /* Deeper cyan for hover / interactive states */
+  --mint-bg: #E0F7FA;           /* Very soft cyan tint for subtle backgrounds */
+  --surface: #F8F8F8;
 
   /* Backgrounds */
-  --background: #FAFAFA;
-  --foreground: #18181B; /* Soft black */
+  --background: #FFFFFF;        /* Clean white primary background */
+  --foreground: #1A1A1A;        /* Near-black text, maximum readability */
   --card: #FFFFFF;
-  --card-foreground: #18181B;
+  --card-foreground: #1A1A1A;
   --popover: #FFFFFF;
-  --popover-foreground: #18181B;
+  --popover-foreground: #1A1A1A;
 
   /* Secondary / Muted */
-  --secondary: #F4F4F5;
-  --secondary-foreground: #27272A;
-  --muted: #F4F4F5;
-  --muted-foreground: #52525B; /* Enough contrast for readability */
+  --secondary: #F8F8F8;         /* Soft light gray for secondary backgrounds / cards */
+  --secondary-foreground: #1A1A1A;
+  --muted: #F8F8F8;
+  --muted-foreground: #555555;  /* Dark gray for subtitles and minor text */
 
   /* Borders & Inputs */
   --border: #E4E4E7;
   --input: #E4E4E7;
-  --ring: #059669;
+  --ring: #06B6D4;              /* Cyan focus ring */
 
   /* Text */
-  --subheading: #3F3F46;
+  --subheading: #555555;        /* Secondary text color */
 
   /* Status */
-  --destructive: #E11D48; /* High-contrast red/rose */
+  --destructive: #E53935;       /* Error red */
+  --success: #43A047;           /* Success green */
 
   /* Base radius */
   --radius: 0.75rem;
 
   /* Sidebar */
-  --sidebar: #F8FAFC;
-  --sidebar-foreground: #18181B;
-  --sidebar-primary: #0F172A;
-  --sidebar-primary-foreground: #F8FAFC;
-  --sidebar-accent: #F4F4F5;
-  --sidebar-accent-foreground: #18181B;
+  --sidebar: #F8F8F8;
+  --sidebar-foreground: #1A1A1A;
+  --sidebar-primary: #06B6D4;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #F8F8F8;
+  --sidebar-accent-foreground: #1A1A1A;
   --sidebar-border: #E4E4E7;
-  --sidebar-ring: #059669;
+  --sidebar-ring: #06B6D4;
 
   /* Charts */
-  --chart-1: #059669;
-  --chart-2: #0F172A;
-  --chart-3: #14B8A6;
+  --chart-1: #06B6D4;
+  --chart-2: #0891B2;
+  --chart-3: #43A047;
   --chart-4: #F59E0B;
   --chart-5: #6366F1;
 }
@@ -92,6 +93,7 @@
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-destructive: var(--destructive);
+  --color-success: var(--success);
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
